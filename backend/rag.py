@@ -1,4 +1,4 @@
-from langchain_core.runnables import RunnableParallel, RunnablePassthrough, S
+from langchain_core.runnables import RunnableParallel, RunnablePassthrough
 from langchain_core.prompts import PromptTemplate
 from langchain_core.output_parsers import StrOutputParser
 from vectorstore import load_vectorstore
