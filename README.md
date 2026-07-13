@@ -1,4 +1,4 @@
-# Youtube_Transcript_RAG# YouTube Transcript RAG
+# YouTube Transcript RAG
 
 A Retrieval-Augmented Generation (RAG) application that allows users to interact with YouTube video transcripts using Large Language Models (LLMs).
 
