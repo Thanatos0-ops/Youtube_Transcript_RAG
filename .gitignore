@@ -4,5 +4,12 @@ venv/
 # Environmental variables
 .env
 
+# Database and vectorstores
+data/
 
+# vscode
+vscode/
+.vscode
 
+# python complied bytecode
+__pycache__/

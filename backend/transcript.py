@@ -29,7 +29,7 @@ def fetch_transcript(video_id: str) -> str:
 
         transcript = api.fetch(video_id, languages=['en'])
 
-        return " ".join(item['text'] for item in transcript)
+        return " ".join(item.text for item in transcript)
 
     except TranscriptsDisabled:
         print("No captions available for this video.")

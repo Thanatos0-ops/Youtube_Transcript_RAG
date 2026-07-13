@@ -23,6 +23,8 @@ def ask(query: str):
 
     parser = StrOutputParser()
 
+    model = get_llm()
+
     # transcript content chain
     content_chain = retriever | format_documents
 
@@ -52,6 +54,6 @@ Answer:
 """
     )
 
-    final_chain = parallel_chain | prompt | get_llm | parser
+    final_chain = parallel_chain | prompt | model | parser
 
     return final_chain.invoke(query)

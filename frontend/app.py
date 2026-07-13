@@ -21,18 +21,18 @@ if st.button("Ingest Video"):
         }
     )
 
-if response.status_code == 200:
+    if response.status_code == 200:
 
-    data = response.json()
+        data = response.json()
 
-    st.success(
-        f"Video ingested successfully."
-        f"Created {data['chunks']} chunks."
-    )
+        st.success(
+            f"Video ingested successfully."
+            f"Created {data['chunks']} chunks."
+        )
 
-else:
+    else:
 
-    st.error("response.text")
+        st.error(response.text)
 
 
 
@@ -45,20 +45,20 @@ question = st.text_input("Ask something about the video")
 
 if st.button("Ask"):
 
-    response.requests.post(
+    response = requests.post(
         f"{BACKEND_URL}/query",
         json={
             "question": question
         }
     )
 
-if response.status_code == 200:
+    if response.status_code == 200:
 
-    data = response.json()
+        data = response.json()
+    
+        st.write("### Answer")
+        st.write(data['answer'])
 
-    st.write("### Answer")
-    st.write(data['answer'])
+    else:
 
-else:
-
-    st.error(response.text)
+        st.error(response.text)
